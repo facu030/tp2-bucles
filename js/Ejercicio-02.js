@@ -21,30 +21,49 @@ Output: Número erróneo
 Output: Introduce un número válido
 */
 
-let notas = parseInt(prompt("ingrese la cantidad de notas"));
+let notas;
 
-for (let i = 1; i <= notas; i++) {
-  let nota = parseInt(prompt("ingrese la nota en un rango de 0 a 10"));
-
-  if (isNaN(nota)) {
-    alert("introducir numero valido");
-  } else {
-    if (nota >= 0 && nota <= 10) {
-      if (nota >= 0 && nota <= 2) {
-        alert("Muy deficiente su nota es : " + nota);
-      } else if (nota >= 3 && nota <= 4) {
-        alert("Insuficiente su nota es : " + nota);
-      } else if (nota >= 5 && nota <= 6) {
-        alert("Suficiente su nota es : " + nota);
-      } else if (nota == 7) {
-        alert("Bien su nota es : " + nota);
-      } else if (nota >= 8 && nota <= 9) {
-        alert("Notable su nota es : " + nota);
-      } else if (nota == 10) {
-        alert("Sobresaliente su nota es : " + nota);
+do {
+  notas = parseInt(prompt("ingrese notas del 0 a 10"));
+  if (!isNaN(notas)) {
+    if (notas >= 0 && notas <= 10) {
+      //podemos hacer con if pero es mejor con switch dependiendo de cada caso muestra un codigo
+      switch (notas) {
+        case 0:
+        case 1:
+        case 2:
+          alert("Muy deficiente");
+          document.write("Muy deficiente");
+          break;
+        case 3:
+        case 4:
+          alert("Insuficiente");
+          document.write("Insuficiente");
+          break;
+        case 5:
+        case 6:
+          alert("suficiente");
+          document.write("suficiente");
+          break;
+        case 7:
+          alert("bien");
+          document.write("bien");
+          break;
+        case 8:
+        case 9:
+          alert("notable");
+          document.write("notable");
+          break;
+        case 10:
+          alert("sobresaliente");
+          document.write("sobresaliente");
+          break;
       }
     } else {
-      alert("Numero erroneo");
+      alert("ingrese numero entre 0 y 10");
     }
+  } else {
+    alert("ingrese un numero valido");
   }
-}
+} while (confirm("desea continuar?"));
+//confirm es un booleano true o false
