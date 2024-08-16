@@ -1,21 +1,18 @@
 //4- Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo números. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.
-let suma;
 
-while (true) {
-  let confirmar = window.confirm(
-    "introducir numeros presione aceptar y cancelar para salir"
-  );
+let suma = 0;
 
-  if (confirmar == true) {
-    let numeros = parseInt(prompt("ingrese numeros"));
-    if (isNaN(numeros)) {
-      alert("No es un numero");
-    } else {
-      let numeros = parseInt(prompt("ingrese numeros"));
-    }
-  } else if (confirmar == false) {
-    suma +- numeros;
-    document.write("la suma es " + suma);
-    console.log(suma);
+//podemos usar un dowhile hasta que se pulse cancelar usando un confirm
+
+do {
+  let numeros = parseInt(prompt("ingrese numeros"));
+
+  if (!isNaN(numeros)) {
+    suma = suma + numeros;
+  } else {
+    alert("no es un numero, ingrese de nuevo");
   }
-}
+} while (confirm("Desea continuar?"));
+
+document.write("la suma de los numero es: " + suma);
+console.log(suma);
