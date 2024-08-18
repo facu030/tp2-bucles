@@ -4,8 +4,8 @@
 let filas = parseInt(prompt("ingrese la cantidad de filas"));
 let columnas = parseInt(prompt("ingrese la cantidad de columnas"));
 
-for(let i=0; i<filas; i++){
-    for(let j=0; j<columnas; j++){
+for(let i=0; i<=filas; i++){
+    for(let j=0; j<=columnas; j++){
         document.write(i);
     }
     document.write("<br>");
