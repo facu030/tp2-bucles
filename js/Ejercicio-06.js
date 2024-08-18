@@ -2,8 +2,8 @@
 
 let escalones = parseInt(prompt("ingrese la cantidad de escalones"));
 
-for (let i = 0; i <= escalones; i++) {
-  for (let j = 0; j <= escalones; j++) {
+for (let i = 1; i <= escalones; i++) {
+  for (let j = 0; j < i; j++) {
     document.write(i);
   }
   document.write("<br>");
